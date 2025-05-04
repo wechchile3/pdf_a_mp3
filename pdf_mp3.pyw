@@ -1,4 +1,6 @@
 import tkinter as tk
+import pyttsx3
+import PyPDF2
 from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog
@@ -17,7 +19,7 @@ cb2=ttk.Entry()
 cb2.place (x=110, y=50,width=300, height=30)    
 bt4=tk.Button(root, text="Destino", font=("Arial", 10), command=lambda: destino_mp3())  
 bt4.place (x=420, y=50,width=100, height=30)    
-bt=tk.Button(root, text="Convertir", font=("Arial", 10), command=lambda: print("Convertir PDF a MP3"))
+bt=tk.Button(root, text="Convertir", font=("Arial", 10), command=lambda: convert_mp3)
 bt.place (x=300, y=90,width=100, height=30)
 bt2=tk.Button(root, text="Salir", font=("Arial", 10), command=root.quit)    
 bt2.place (x=100, y=90,width=100, height=30)
