@@ -19,11 +19,11 @@ cb2=ttk.Entry()
 cb2.place (x=110, y=50,width=300, height=30)    
 bt4=tk.Button(root, text="Destino", font=("Arial", 10), command=lambda: destino_mp3())  
 bt4.place (x=420, y=50,width=100, height=30)    
-bt=tk.Button(root, text="Convertir", font=("Arial", 10), command=lambda: convert_mp3)
+bt=tk.Button(root, text="Convertir", font=("Arial", 10), command=lambda: convert_mp3())
 bt.place (x=300, y=90,width=100, height=30)
 bt2=tk.Button(root, text="Salir", font=("Arial", 10), command=root.quit)    
 bt2.place (x=100, y=90,width=100, height=30)
-root.geometry("600x200")    
+root.geometry("550x200")    
 
 def buscar_pdf():
     # Aquí puedes implementar la lógica para buscar el archivo PDF
@@ -37,7 +37,7 @@ def buscar_pdf():
  
 def destino_mp3():
     # Aquí puedes implementar la lógica para buscar el archivo MP3
-    filename = filedialog.askdirectory(defaultextension=".mp3", filetypes=[("MP3 files", "*.mp3")])
+    filename = filedialog.askdirectory()
     if filename:
         cb2.insert(0, filename)
     else:
@@ -47,6 +47,8 @@ def convert_mp3():
     # Aquí puedes implementar la lógica para convertir el PDF a MP3
     pdf_file = cb.get()
     mp3_file = cb2.get()
+    print(pdf_file)
+    print(mp3_file)
     if pdf_file and mp3_file:
         # Lógica de conversión aquí
         print(f"Convirtiendo {pdf_file} a {mp3_file}")
